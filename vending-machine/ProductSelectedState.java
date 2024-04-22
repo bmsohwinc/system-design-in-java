@@ -15,14 +15,14 @@ public class ProductSelectedState implements State {
     @Override
     public void selectProduct(int productId) {
         System.out.println("VM PRODUCT_SELECTED. Product selected.");
-        vendingMachine.selectedProduct = productId;
+        vendingMachine.selectProductUtil(productId);
     }
 
     @Override
     public void dispenseProduct() {
         System.out.println("VM PRODUCT_SELECTED: Dispensing product: " + vendingMachine.selectedProduct);
         if (vendingMachine.canDispenseProduct()) {
-            vendingMachine.dispenseProduct();
+            vendingMachine.dispenseProductUtil();
             vendingMachine.currentState = new IdleState(vendingMachine);
         } else {
             System.out.println("VM PRODUCT_SELECTED: Insufficient coins inserted. Please insert more coins.");
@@ -33,7 +33,7 @@ public class ProductSelectedState implements State {
     @Override
     public void cancelRequest() {
         System.out.println("VM PRODUCT_SELECTED: Refunding coins. Thank you.");
-        vendingMachine.cancelRequest();
+        vendingMachine.cancelRequestUtil();
         vendingMachine.currentState = new IdleState(vendingMachine);
     }
 }

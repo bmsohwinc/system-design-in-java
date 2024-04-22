@@ -10,14 +10,14 @@ public class CoinInsertedState implements State {
     @Override
     public void insertCoin(int coin) {
         System.out.println("VM COIN_INSERTED: Coin inserted.");
-        vendingMachine.insertCoin(coin);
+        vendingMachine.insertCoinUtil(coin);
     }
 
 
     @Override
     public void selectProduct(int productId) {
         System.out.println("VM COIN_INSERTED. Product selected. Transitioning to PRODUCT_SELECTED state.");
-        vendingMachine.selectedProduct = productId;
+        vendingMachine.selectProductUtil(productId);
         vendingMachine.currentState = new ProductSelectedState(vendingMachine);
     }
 
@@ -29,7 +29,7 @@ public class CoinInsertedState implements State {
     @Override
     public void cancelRequest() {
         System.out.println("VM COIN_INSERTED: Refunding coins. Thank you.");
-        vendingMachine.cancelRequest();
+        vendingMachine.cancelRequestUtil();
         vendingMachine.currentState = new IdleState(vendingMachine);
     }    
 }

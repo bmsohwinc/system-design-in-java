@@ -21,11 +21,31 @@ public class VendingMachine {
     }
 
     public void insertCoin(int coin) {
+        currentState.insertCoin(coin);
+    }
+    
+    public void selectProduct(int productId) {
+        currentState.selectProduct(productId);
+    }
+
+    public void dispenseProduct() {
+        currentState.dispenseProduct();
+    }
+
+    public void cancelRequest() {
+        currentState.cancelRequest();
+    }
+
+    public void insertCoinUtil(int coin) {
         coins.add(coin);
         totalSum += coin;
     }
 
-    public void cancelRequest() {
+    public void selectProductUtil(int productId) {
+        selectedProduct = productId;
+    }
+
+    public void cancelRequestUtil() {
         refundCoins();
         resetSelection();
     }
@@ -36,14 +56,14 @@ public class VendingMachine {
         return isValidProductId() && totalSum >= products.get(selectedProduct);
     }
 
-    private boolean isValidProductId() {
-        return selectedProduct > 0 && selectedProduct < products.size();
-    }
-
-    public void dispenseProduct() {
+    public void dispenseProductUtil() {
         System.out.println("VM: Take your product! " + selectedProduct);
         dispenseChange();
         resetSelection();
+    }
+
+    private boolean isValidProductId() {
+        return selectedProduct > 0 && selectedProduct < products.size();
     }
 
     private void refundCoins() {

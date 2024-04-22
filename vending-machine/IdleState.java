@@ -10,7 +10,7 @@ public class IdleState implements State {
     @Override
     public void insertCoin(int coin) {
         System.out.println("VM IDLE: Coin inserted. Transitioning to COIN_INSERTED state");
-        vendingMachine.insertCoin(coin);
+        vendingMachine.insertCoinUtil(coin);
         vendingMachine.currentState = new CoinInsertedState(vendingMachine);
     }
 
