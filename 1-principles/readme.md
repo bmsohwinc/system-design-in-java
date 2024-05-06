@@ -1,12 +1,13 @@
 # Some Frequently used Design Principles
-
+- Referring: https://java-design-patterns.com/principles
+- 
 1. DRY - Don't repeat yourself
 
 2. KISS - Keep it Simple
 
 3. SOC - Separation of Concerns
 
-4. Law of Demeter
+4. LoD - Law of Demeter
 - Object `a` shouldn't know about `2-nd level` information of an object (say `b`) that it has access to
 - 1st level: b.m1(), b.m2(), b.prop, etc.
 - 2nd level: b.m1().m3(), b.m2().k2().i2(), etc.
