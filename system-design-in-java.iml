@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tic-tac-toe" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/vending-machine" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/2-design-patterns" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/book-reader" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/chess-game" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
