@@ -3,13 +3,14 @@ package factory.pattern;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RoadTransport implements Transport {
-    String name = "rt-" + System.currentTimeMillis();
+public class SeaTransport implements Transport {
+
+    String name = "st-" + System.currentTimeMillis();
 
     Map<MetricType, Double> metrics = new HashMap<>();
 
-    public void drive() {
-        System.out.println(name + " is driving.");
+    public void sail() {
+        System.out.println(name + " is sailing.");
     }
 
     public void deliver() {
@@ -23,7 +24,7 @@ public class RoadTransport implements Transport {
 
     @Override
     public String toString() {
-        return "RoadTransport{" +
+        return "SeaTransport{" +
                 "name='" + name + '\'' +
                 '}';
     }
